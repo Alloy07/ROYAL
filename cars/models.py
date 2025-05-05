@@ -14,6 +14,7 @@ class Car(BaseModel):
     description = models.TextField(null=False, blank=False)
     price = models.PositiveIntegerField(null=True, blank=True)
     brand = models.ForeignKey('cars.Brand', on_delete=models.CASCADE, related_name='cars')
+    image = models.ImageField(upload_to='cars', null=True, blank=True)
     color = models.CharField(max_length=30)
     gear_type = models.CharField(max_length=10, choices=GearType.choices, default=GearType.MANUAL)
     distance_covered = models.PositiveIntegerField(null=True, blank=True)
